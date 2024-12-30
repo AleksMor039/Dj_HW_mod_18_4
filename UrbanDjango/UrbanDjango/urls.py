@@ -17,14 +17,11 @@ Including another URLconf
 from django.views.generic import TemplateView
 from django.contrib import admin
 from django.urls import path
-# from task2.views import func_answer, answer2 # вносим для связи с ф-ией # и классом
-from task3.views import platform, games, cart
+from task4.views import Platform, Cart, menu
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('platform/', platform),
-    path('platform/games/', games),
-    path('platform/cart/', cart),
-    # path('', func_answer),
-    # path('func_answer/', answer2.as_view())
+    path('platform/', Platform.as_view()),
+    path('platform/games/', menu),
+    path('platform/cart/', Cart.as_view()),
 ]
